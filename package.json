@@ -1,0 +1,28 @@
+{
+  "name": "recipes_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "netlify": "netlify dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "airtable-node": "^0.1.20",
+    "axios": "^0.27.2",
+    "cli": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "git": "^0.1.5",
+    "netlify": "^11.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwabednego/recipes-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jwabednego/recipes-api/issues"
+  },
+  "homepage": "https://github.com/jwabednego/recipes-api#readme",
+  "description": ""
+}
