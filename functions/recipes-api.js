@@ -43,6 +43,7 @@ exports.handler = async (event, context) => {
         images,
         featured,
         stars,
+        reviews,
       } = recipe.fields;
       const url = images[0].url;
 
@@ -56,6 +57,7 @@ exports.handler = async (event, context) => {
         url,
         featured,
         stars,
+        reviews,
       };
     });
 
