@@ -46,7 +46,17 @@ exports.handler = async (event, context) => {
       } = recipe.fields;
       const url = images[0].url;
 
-      return { id, name, price, type, category, desciption, url, featured };
+      return {
+        id,
+        name,
+        price,
+        type,
+        category,
+        desciption,
+        url,
+        featured,
+        stars,
+      };
     });
 
     return {
