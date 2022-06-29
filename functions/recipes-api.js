@@ -34,8 +34,16 @@ exports.handler = async (event, context) => {
     // console.log(records.length);
     const recipes = records.map((recipe) => {
       const { id } = recipe;
-      const { name, price, type, category, desciption, images, featured } =
-        recipe.fields;
+      const {
+        name,
+        price,
+        type,
+        category,
+        desciption,
+        images,
+        featured,
+        stars,
+      } = recipe.fields;
       const url = images[0].url;
 
       return { id, name, price, type, category, desciption, url, featured };
