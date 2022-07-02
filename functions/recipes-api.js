@@ -10,6 +10,31 @@ exports.handler = async (event, context) => {
   if (id) {
     try {
       const recipes = await airtable.retrieve(id);
+      const data = recipes.map((recipe) => {
+        const { id } = recipe;
+        const {
+          name,
+          price,
+          type,
+          category,
+          desciption,
+          images,
+          stars,
+          reviews,
+        } = recipe.fields;
+
+        return {
+          id,
+          name,
+          price,
+          type,
+          images,
+          desciption,
+          stars,
+          reviews,
+          category,
+        };
+      });
       if (recipes.error) {
         return {
           headers: {
@@ -25,7 +50,7 @@ exports.handler = async (event, context) => {
           "Access-Control-Allow-Origin": "*",
         },
         statusCode: 200,
-        body: JSON.stringify(recipes),
+        body: JSON.stringify(data),
       };
     } catch (error) {
       return {
