@@ -12,6 +12,9 @@ exports.handler = async (event, context) => {
       const recipes = await airtable.retrieve(id);
       if (recipes.error) {
         return {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
           statusCode: 404,
           body: `Error, We Cannot Find The Recipe of ID ${id}`,
         };
@@ -23,6 +26,9 @@ exports.handler = async (event, context) => {
       };
     } catch (error) {
       return {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         statusCode: 500,
         body: "Sever Error",
       };
