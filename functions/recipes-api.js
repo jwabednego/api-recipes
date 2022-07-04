@@ -10,7 +10,6 @@ exports.handler = async (event, context) => {
   if (id) {
     try {
       const recipes = await airtable.retrieve(id);
-
       if (recipes.error) {
         return {
           headers: {
@@ -41,7 +40,6 @@ exports.handler = async (event, context) => {
 
   try {
     const { records } = await airtable.list();
-    // console.log(records.length);
     const recipes = records.map((recipe) => {
       const { id } = recipe;
       const {
@@ -80,6 +78,9 @@ exports.handler = async (event, context) => {
     };
   } catch (error) {
     return {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
       statusCode: 500,
       body: "Sever Error",
     };
